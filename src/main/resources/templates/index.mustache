@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header clearfix">
+            <nav>
+                <a href="#" id="logoutlink">Logout</a>
+            </nav>
+        </div>
+        <div class="jumbotron">
+            <h1>ToDo</h1>
+            <p class="lead">Welcome</p>
+        </div>
+    </div>
+    <form id="logout" action="/logout" method="post">
+        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
+    </form>
+    <script>
+        $(function(){
+           $('#logoutLink').click(function (){
+               $('#logout').submit();
+           });
+        });
+    </script>
+</body>
+</html>
